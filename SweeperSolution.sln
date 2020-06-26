@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Blend for Visual Studio 15
-VisualStudioVersion = 15.0.28010.2019
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sweeper", "Sweeper\Sweeper.csproj", "{C5FC2D42-F4A1-4D9B-A2DD-5B066C278122}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweeperTest", "SweeperTest\SweeperTest.csproj", "{A3D179EF-2A1E-44DF-A618-4FE7F9F1DC1A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SweeperCore", "Sweeper\SweeperCore.csproj", "{45851D79-AE3C-42E9-B7A7-14532401DE5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,18 @@ Global
 		{A3D179EF-2A1E-44DF-A618-4FE7F9F1DC1A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{A3D179EF-2A1E-44DF-A618-4FE7F9F1DC1A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A3D179EF-2A1E-44DF-A618-4FE7F9F1DC1A}.Release|x86.ActiveCfg = Release|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Debug|x86.Build.0 = Debug|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Release|x86.ActiveCfg = Release|Any CPU
+		{45851D79-AE3C-42E9-B7A7-14532401DE5D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
