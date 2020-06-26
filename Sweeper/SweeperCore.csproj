@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+	<OutputPath>bin_core\Debug\</OutputPath>
+	<IntermediateOutputPath>out_core\Debug\</IntermediateOutputPath>
   </PropertyGroup>
-
 </Project>
