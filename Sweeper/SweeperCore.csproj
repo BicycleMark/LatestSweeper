@@ -12,6 +12,50 @@
 	<ItemGroup>
 	  <Compile Remove="Properties\AssemblyInfo.cs" />
 	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\MineShadow-Wrong_files\image0.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.ico" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image0.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image1.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image2.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Button.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Flag.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Pressed.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\COPPER\Button.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\COPPER\Flag.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\COPPER\Pressed.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\DEFAULT\Button.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\DEFAULT\Flag.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\DEFAULT\Pressed.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\KEYWEST\Button.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\KEYWEST\Flag.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\KEYWEST\Pressed.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\POWDER\Button.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\POWDER\Flag.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\POWDER\Pressed.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\MineShadow-Wrong_files\image0.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.ico" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image0.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image1.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image2.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Button.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Flag.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Pressed.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\COPPER\Button.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\COPPER\Flag.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\COPPER\Pressed.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\DEFAULT\Button.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\DEFAULT\Flag.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\DEFAULT\Pressed.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\KEYWEST\Button.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\KEYWEST\Flag.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\KEYWEST\Pressed.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\POWDER\Button.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\POWDER\Flag.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\POWDER\Pressed.png" />
+	</ItemGroup>
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>

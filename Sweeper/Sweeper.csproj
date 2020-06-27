@@ -176,7 +176,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -226,6 +226,7 @@
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Flag.png" />
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Pressed.png" />
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\POWDER\Button.png" />
+    <None Include="Resources\Minesweeper_Icon.ico" />
     <Content Include="Resources\Sounds\CLICK.WAV">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
