@@ -1,9 +1,37 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project>
+	<PropertyGroup>
+		<BaseIntermediateOutputPath>obj_core</BaseIntermediateOutputPath>
+	</PropertyGroup>
+	<Import Sdk="Microsoft.NET.Sdk.WindowsDesktop" Project="Sdk.props" />
+	<ItemGroup>
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
+		<Page Remove="obj\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
 	<OutputPath>bin_core\Debug\</OutputPath>
 	<IntermediateOutputPath>out_core\Debug\</IntermediateOutputPath>
+	<AssemblyName>Sweeper</AssemblyName>
+	<RootNamespace>Sweeper</RootNamespace>
   </PropertyGroup>
+	
+  <!--<ItemGroup>
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
+		<Page Remove="obj\**" />
+  </ItemGroup> -->
+	<!--
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  -->
+	<Import Sdk="Microsoft.NET.Sdk.WindowsDesktop" Project="Sdk.targets" />
 </Project>
