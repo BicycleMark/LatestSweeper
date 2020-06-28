@@ -1,0 +1,41 @@
+<Project>
+	<PropertyGroup>
+		<BaseIntermediateOutputPath>obj_core</BaseIntermediateOutputPath>
+	</PropertyGroup>
+	<Import Sdk="Microsoft.NET.Sdk.WindowsDesktop" Project="Sdk.props" />
+	<ItemGroup>
+		<Compile Remove="obj\**" />
+		<Compile Remove="Resources - IMAGE-ITEMS\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<EmbeddedResource Remove="Resources - IMAGE-ITEMS\**" />
+		<None Remove="obj\**" />
+		<None Remove="Resources - IMAGE-ITEMS\**" />
+		<Page Remove="obj\**" />
+		<Page Remove="Resources - IMAGE-ITEMS\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Button.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_grin.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\THEMES\DEFAULT\Button.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Resource Include="Button.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_grin.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\DEFAULT\Button.png" />
+	</ItemGroup>
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+	<OutputPath>bin_core\Debug\</OutputPath>
+	<IntermediateOutputPath>out_core\Debug\</IntermediateOutputPath>
+	<AssemblyName>Sweeper</AssemblyName>
+	<RootNamespace>Sweeper</RootNamespace>
+  </PropertyGroup>
+  <Import Sdk="Microsoft.NET.Sdk.WindowsDesktop" Project="Sdk.targets" />
+</Project>
