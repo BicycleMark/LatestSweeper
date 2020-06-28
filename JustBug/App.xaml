@@ -23,14 +23,14 @@
         <VisualBrush x:Key="GRINUP">
             <VisualBrush.Visual>
                 <Border Background="{DynamicResource BUTTON}" Width="90" Height="91">
-                    <Image Source="tango_face_grin.png"></Image>
+                    <Image Source="/tango_face_grin.png"></Image>
                 </Border>
             </VisualBrush.Visual>
         </VisualBrush>
         <VisualBrush x:Key="SADUP">
             <VisualBrush.Visual>
                 <Border Background="{DynamicResource BUTTON}" Width="90" Height="91">
-                    <Image Source="tango_face_sad.png"></Image>
+                    <Image Source="/tango_face_sad.png"></Image>
                 </Border>
             </VisualBrush.Visual>
         </VisualBrush>

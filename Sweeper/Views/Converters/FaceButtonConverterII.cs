@@ -60,7 +60,7 @@ namespace Sweeper.Views
         {
             try {
                return  (VisualBrush)Application.Current.FindResource(partialKey);
-               //return (VisualBrush)Application.Current.FindResource(themeName + "_" + partialKey);
+              
             }
             catch
             {

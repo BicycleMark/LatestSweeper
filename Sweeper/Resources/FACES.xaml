@@ -38,48 +38,34 @@
                 <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_sad.png"></Image>
             </Border>
         </VisualBrush.Visual>
-
-
     </VisualBrush>
     <VisualBrush x:Key="SMILEUP">
-
         <VisualBrush.Visual>
             <Border Background="{DynamicResource BUTTON}" Width="90" Height="91">
                 <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_smile.png"></Image>
             </Border>
         </VisualBrush.Visual>
-
-
     </VisualBrush>
     <VisualBrush x:Key="SMILEDN">
-
         <VisualBrush.Visual>
             <Border Background="{DynamicResource PRESSED}" Width="90" Height="91">
                 <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_smile.png"></Image>
             </Border>
         </VisualBrush.Visual>
-
-
     </VisualBrush>
     <VisualBrush x:Key="SURPRISEUP">
-
         <VisualBrush.Visual>
             <Border Background="{DynamicResource BUTTON}" Width="90" Height="91">
                 <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_surprise.png"></Image>
             </Border>
         </VisualBrush.Visual>
-
-
     </VisualBrush>
     <VisualBrush x:Key="SURPRISEDN">
-
         <VisualBrush.Visual>
             <Border Background="{DynamicResource PRESSED}" Width="90" Height="91">
                 <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_surprise.png"></Image>
             </Border>
         </VisualBrush.Visual>
-
-
     </VisualBrush>
     <VisualBrush x:Key="WINKUP" >
         <VisualBrush.Visual>
@@ -88,7 +74,6 @@
             </Border>
         </VisualBrush.Visual>
     </VisualBrush>
-
     <VisualBrush x:Key="WINKDN">
         <VisualBrush.Visual>
             <Border Background="{DynamicResource PRESSED}" Width="90" Height="91">
@@ -96,5 +81,4 @@
             </Border>
         </VisualBrush.Visual>
     </VisualBrush>
-
 </ResourceDictionary>

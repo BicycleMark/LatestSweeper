@@ -33,8 +33,9 @@
 			</Image.Effect>
             -->
         </Image>
-        <Rectangle Fill="{DynamicResource GRINUP}" Grid.Row="1" HorizontalAlignment="Center" Height="73"  Stroke="Black" VerticalAlignment="Center" Width="73" StrokeThickness="0"/>
-        <Rectangle Fill="{DynamicResource SADUP}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  Height="73" Stroke="Black" VerticalAlignment="Center" Width="73" StrokeThickness="0"/>
+        <!--d-->
+        <Rectangle Fill="{StaticResource GRINUP}" Grid.Row="1" HorizontalAlignment="Center" Height="73"  Stroke="Black" VerticalAlignment="Center" Width="73" StrokeThickness="0"/>
+        <Rectangle Fill="{StaticResource SADUP}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  Height="73" Stroke="Black" VerticalAlignment="Center" Width="73" StrokeThickness="0"/>
         <Label Content="Sweeper With Undo/Redo Version 0.25" Grid.Column="1"
 			HorizontalAlignment="Stretch"  
 			VerticalAlignment="Top" 
