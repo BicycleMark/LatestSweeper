@@ -110,11 +110,5 @@
   <ItemGroup>
     <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_sad.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="tango_face_grin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="tango_face_sad.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
