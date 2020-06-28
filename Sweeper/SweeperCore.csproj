@@ -13,8 +13,14 @@
 	  <Compile Remove="Properties\AssemblyInfo.cs" />
 	</ItemGroup>
 	<ItemGroup>
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_grin.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_sad.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_smile.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_surprise.png" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_wink.png" />
 	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\MineShadow-Wrong_files\image0.png" />
 	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.ico" />
+	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.png" />
 	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image0.png" />
 	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image1.png" />
 	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image2.png" />
@@ -35,8 +41,14 @@
 	  <None Remove="Resources\IMAGE-ITEMS\THEMES\POWDER\Pressed.png" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_grin.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_sad.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_smile.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_surprise.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_wink.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\MineShadow-Wrong_files\image0.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.ico" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image0.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image1.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\mine_files\image2.png" />
