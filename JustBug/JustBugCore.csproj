@@ -23,6 +23,7 @@
 	</ItemGroup>
 	
 	<ItemGroup>
+	  <Resource Include="Button.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_sad.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_grin.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.png" />

@@ -15,7 +15,7 @@
             <DrawingBrush.Drawing>
                 <DrawingGroup>
                     <DrawingGroup.Children>
-                        <ImageDrawing ImageSource="/Button.png" Rect="0,0,110,90"/>
+                        <ImageDrawing ImageSource="/Resources/IMAGE-ITEMS/THEMES/DEFAULT/Button.png" Rect="0,0,110,90"/>
                     </DrawingGroup.Children>
                 </DrawingGroup>
             </DrawingBrush.Drawing>
@@ -23,14 +23,14 @@
         <VisualBrush x:Key="GRINUP">
             <VisualBrush.Visual>
                 <Border Background="{DynamicResource BUTTON}" Width="90" Height="91">
-                    <Image Source="/tango_face_grin.png"></Image>
+                    <Image Source="/Resources/IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_grin.png"></Image>
                 </Border>
             </VisualBrush.Visual>
         </VisualBrush>
         <VisualBrush x:Key="SADUP">
             <VisualBrush.Visual>
                 <Border Background="{DynamicResource BUTTON}" Width="90" Height="91">
-                    <Image Source="/tango_face_sad.png"></Image>
+                    <Image Source="/Resources/IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_sad.png"></Image>
                 </Border>
             </VisualBrush.Visual>
         </VisualBrush>
