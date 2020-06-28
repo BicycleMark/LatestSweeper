@@ -16,6 +16,11 @@
 	<ItemGroup>
 	  <Compile Remove="Properties\AssemblyInfo.cs" />
 	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Button.png" />
+	  <None Remove="tango_face_grin.png" />
+	  <None Remove="tango_face_sad.png" />
+	</ItemGroup>
 	
 	<ItemGroup>
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_sad.png" />
