@@ -16,21 +16,13 @@
 	<ItemGroup>
 	  <Compile Remove="Properties\AssemblyInfo.cs" />
 	</ItemGroup>
+	
 	<ItemGroup>
-	  <None Remove="Button.png" />
-	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_grin.png" />
-	  <None Remove="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.png" />
-	  <None Remove="Resources\IMAGE-ITEMS\THEMES\DEFAULT\Button.png" />
-	  <None Remove="tango_face_grin.png" />
-	  <None Remove="tango_face_sad.png" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Resource Include="Button.png" />
+	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_sad.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\FACES_file\tango_face_grin.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.png" />
 	  <Resource Include="Resources\IMAGE-ITEMS\THEMES\DEFAULT\Button.png" />
-	  <Resource Include="tango_face_grin.png" />
-	  <Resource Include="tango_face_sad.png" />
+	  
 	</ItemGroup>
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
