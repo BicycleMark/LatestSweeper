@@ -97,6 +97,7 @@
     <Compile Include="Services\Interfaces\IAdornGameWithSounds.cs" />
     <Compile Include="Services\Interfaces\IChangeTheme.cs" />
     <Compile Include="Services\Interfaces\IDialogService.cs" />
+    <Compile Include="ViewModels\SweeperViewModel\ISweeperViewModel.cs" />
     <Compile Include="ViewModels\SweeperViewModel\SweeperViewModel.CMDS.cs" />
     <Compile Include="ViewModels\UndoRedoViewModel\CommandItem.cs" />
     <Compile Include="ViewModels\UndoRedoViewModel\UndoRedoViewModel.cs" />

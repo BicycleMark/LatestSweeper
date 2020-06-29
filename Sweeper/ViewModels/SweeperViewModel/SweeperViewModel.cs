@@ -12,8 +12,8 @@ using System.Windows;
 
 namespace Sweeper.ViewModels
 {
-    public partial class SweeperViewModel : INotifyPropertyChanged, IDisposable
-    {        
+    public partial class SweeperViewModel : INotifyPropertyChanged, IDisposable, ISweeperViewModel
+    {
         private Timer tmr;
         ObservableCollection<GamePiece> _cells = new ObservableCollection<GamePiece>();
         public event PropertyChangedEventHandler PropertyChanged = null;
@@ -49,39 +49,39 @@ namespace Sweeper.ViewModels
             tmr.Elapsed += tmr_Elapsed;
             //Although this is Static it is ok because the two objects have the same lifetimes
             RelayCommand.NewCommandItemEvent += RelayCommand_NewCommandItemEvent;
-           // if (System.Windows.Application.Current.MainWindow == null)
-                NewGame();
+            // if (System.Windows.Application.Current.MainWindow == null)
+            NewGame();
             App.ChangeThemeEvent += App_ChangeThemeEvent;
-           
+
             RelayCommand.RefreshStacksEvent += RelayCommand_RefreshStacksEvent;
-         
+
             Themes.Clear();
             var sep = new char[] { ';' };
             //String [] l = (String [])App.Current.FindResource("Themes");
 
             var themesStr = "Chocalate;Copper;Default;KeyWest;Powder";
 
-            
 
-            var  l = themesStr.Split(sep);
+
+            var l = themesStr.Split(sep);
             if (l == null || l.Count() == 0)
                 l = (String[])App.Current.FindResource("Themes");
 
             foreach (String s in l)
             {
-               Themes.Add(s);
+                Themes.Add(s);
 
             }
 
             var gameTypesStr = "Beginner;Intermediate;Advanced;Custom";
-            var  gt = gameTypesStr.Split(sep);
+            var gt = gameTypesStr.Split(sep);
             if (gt == null || gt.Count() == 0)
                 gt = (String[])App.Current.FindResource("GameTypes");
             foreach (String s in gt)
             {
                 GameTypes.Add(s);
             }
-            
+
 
             UrVm.RefreshCommand = RefreshStacksCommand;
             UrVm.RedoCommand = this.RedoAllOrLastCommand;
@@ -114,12 +114,12 @@ namespace Sweeper.ViewModels
             get { return gameTypes; }
             set { gameTypes = value; }
         }
-        ObservableCollection <String> themes = new ObservableCollection<string>();
+        ObservableCollection<String> themes = new ObservableCollection<string>();
 
         public ObservableCollection<String> Themes
         {
-          get { return themes; }
-          set { themes = value; }
+            get { return themes; }
+            set { themes = value; }
         }
 
         void RelayCommand_NewCommandItemEvent(object sender, EventArgs e)
@@ -133,11 +133,12 @@ namespace Sweeper.ViewModels
                 {
                     undoStack.Push(ci);
                     CountGameCmdItems++;
-                }else
+                }
+                else
                 {
                     //Make Sure We Only Add the "NewGameCommand" once.
-                    if (undoStack.Count(log=>  log.TheRelayCommand.DisplayText == "NewGameCommand" )==0)
-                        undoStack.Push(ci);                  
+                    if (undoStack.Count(log => log.TheRelayCommand.DisplayText == "NewGameCommand") == 0)
+                        undoStack.Push(ci);
                 }
             }
             else
@@ -166,14 +167,14 @@ namespace Sweeper.ViewModels
                         GameBoardEnabled = true;
                         tmr.Enabled = true;
                     }
-                   
+
                     gameState = value;
                     switch (gameState)
                     {
-                        case (GameConstants.GameStates.LOST):                           
+                        case (GameConstants.GameStates.LOST):
                             //this.soundAdornment.Lost();
                             result = GameConstants.GameStates.LOST;
-                            gameState = GameConstants.GameStates.LOST;                            
+                            gameState = GameConstants.GameStates.LOST;
                             break;
 
                         case (GameConstants.GameStates.WON):
@@ -271,7 +272,7 @@ namespace Sweeper.ViewModels
             }
         }
         int rows = 9;
-       
+
 
 
         bool soundsOn = true;
@@ -386,9 +387,9 @@ namespace Sweeper.ViewModels
             get { return maxHeight; }
             set
             {
-//               SystemParameters.FullPrimaryScreenHeight
-// 
-                maxHeight = value ;
+                //               SystemParameters.FullPrimaryScreenHeight
+                // 
+                maxHeight = value;
                 OnPropertyChanged("MaxHeight");
             }
         }
@@ -400,8 +401,8 @@ namespace Sweeper.ViewModels
             {
                 if (value != height)
                     height = value;
-               // height = (int)((double)value * (SystemParameters.FullPrimaryScreenHeight/GameConstants.DESIGNHEIGHTH));
-                
+                // height = (int)((double)value * (SystemParameters.FullPrimaryScreenHeight/GameConstants.DESIGNHEIGHTH));
+
                 OnPropertyChanged("Height");
             }
         }
@@ -412,7 +413,7 @@ namespace Sweeper.ViewModels
             set
             {
                 if (width != value)
-                   width = value;
+                    width = value;
                 //width = (int)((double)value * (SystemParameters.FullPrimaryScreenWidth / GameConstants.DESIGNWIDTH));
                 OnPropertyChanged("Width");
             }
@@ -464,13 +465,17 @@ namespace Sweeper.ViewModels
             }
         }
 
-       
+
         private string theme = "Default";
-        public string Theme { get { return theme; } set {
-                                                          theme = value;
-                                                          GameThemeCommand.Execute(theme);
-                                                          OnPropertyChanged("Theme");
-                                                        }
+        public string Theme
+        {
+            get { return theme; }
+            set
+            {
+                theme = value;
+                GameThemeCommand.Execute(theme);
+                OnPropertyChanged("Theme");
+            }
         }
 
         #endregion
@@ -484,25 +489,26 @@ namespace Sweeper.ViewModels
             this.CountGameCmdItems = 0;
             this.CmdItems.Clear();
         }
-        private void UndoAll() 
+        private void UndoAll()
         {
             CommandItem li = undoStack.Peek();
-            while (undoStack.Count > 1 )
+            while (undoStack.Count > 1)
             {
-                if (li.TheRelayCommand.CanUnExecute(li.Parm) )
+                if (li.TheRelayCommand.CanUnExecute(li.Parm))
                     UndoLast();
                 else
                 {
-                   li = undoStack.Pop();
-                   busTubStack.Push(li);
-               //    Debugger.Break();
+                    li = undoStack.Pop();
+                    busTubStack.Push(li);
+                    //    Debugger.Break();
                 }
                 if (undoStack.Count > 1)
                     li = undoStack.Peek();
             }
         }
         private void UndoLast()
-        {   if (undoStack.Count > 0)
+        {
+            if (undoStack.Count > 0)
             {
                 //If the next command is new Game Execute And Return
                 CommandItem li = undoStack.Peek();
@@ -512,7 +518,7 @@ namespace Sweeper.ViewModels
                     return;
                 }
                 //Some Commands are no longer available for Undo Put them in the BusTub
-                while(!li.TheRelayCommand.CanUnExecute(li.Parm) && undoStack.Count>0)               
+                while (!li.TheRelayCommand.CanUnExecute(li.Parm) && undoStack.Count > 0)
                 {
                     if (li.TheRelayCommand.DisplayText != "NewGameCommand")
                     {
@@ -520,22 +526,23 @@ namespace Sweeper.ViewModels
                         busTubStack.Push(li);
                     }
                     li = undoStack.Peek();
-                }   
+                }
                 //Now the next Command is either NewGameCommand or available for re-execution
                 if (undoStack.Count > 0)
-                    {   li = undoStack.Peek();
-                        if (li.TheRelayCommand.DisplayText != "NewGameCommand")
-                        {
-                            li = undoStack.Pop();
-                            redoStack.Push(li);
-                            li.TheRelayCommand.UnExecute(li.Parm);
-                        }
-                        else
-                            li.TheRelayCommand.Execute(li.Parm);
-                    }                   
+                {
+                    li = undoStack.Peek();
+                    if (li.TheRelayCommand.DisplayText != "NewGameCommand")
+                    {
+                        li = undoStack.Pop();
+                        redoStack.Push(li);
+                        li.TheRelayCommand.UnExecute(li.Parm);
+                    }
+                    else
+                        li.TheRelayCommand.Execute(li.Parm);
                 }
+            }
         }
-        
+
         private bool inUndoSet(string p)
         {
             return p == "GAME";
@@ -550,7 +557,7 @@ namespace Sweeper.ViewModels
         private void RedoLast()
         {
             if (redoStack.Count > 0)
-            { 
+            {
                 CommandItem ci = redoStack.Peek();
                 if (!ci.TheRelayCommand.CanExecute(ci.Parm))
                 {
@@ -562,25 +569,25 @@ namespace Sweeper.ViewModels
                 ci.TheRelayCommand.Execute(ci.Parm);
             }
         }
-        
+
         void tmr_Elapsed(object sender, ElapsedEventArgs e)
         {
             if (time >= GameConstants.MAXGAMETIME)
             {
-                
+
                 EndGame(GameConstants.GameStates.LOST);
             }
             this.Time += 1;
         }
-        
+
         private void NewGame()
         {
             SetGameParms(gameType);
             NewGame(Rows, Columns, Mines);
         }
-        
+
         private int thisGamesMines = 0;
-        
+
         private void NewGame(int r, int c, int mines)
         {
             GameBoardEnabled = false;
@@ -599,7 +606,7 @@ namespace Sweeper.ViewModels
             _cells.Clear();
 
             int maxSeed = r * c;
-            
+
 
             Random ra = new Random();
             int n = 0;
@@ -635,7 +642,7 @@ namespace Sweeper.ViewModels
                     {
                         GameConstants.PieceValues pv = GameConstants.PieceValues.NOMINE;
                         List<GamePiece> Lst = (List<GamePiece>)Neighbors(i, j);
-                        int nMines = Lst.Count(gp=>gp.ActualValue==GameConstants.PieceValues.MINE);
+                        int nMines = Lst.Count(gp => gp.ActualValue == GameConstants.PieceValues.MINE);
                         pv = (GameConstants.PieceValues)((int)GameConstants.PieceValues.NOMINE + nMines);
                         GamePiece gItem = Item(i, j);
                         gItem.ActualValue = pv;
@@ -652,7 +659,7 @@ namespace Sweeper.ViewModels
             ShowGame();
         }
 
-        
+
         private bool isNeighbor(GamePiece gp, int r, int c)
         {
             if (gp.R == r && gp.C == c)
@@ -664,7 +671,7 @@ namespace Sweeper.ViewModels
         }
 
 
-bool LINQ = false;
+        bool LINQ = false;
         private IEnumerable<GamePiece> Neighbors(int r, int c)
         {
             if (LINQ)
@@ -677,10 +684,10 @@ bool LINQ = false;
                     from gp in _cells
                     where (gp.R >= r - 1 && gp.R <= r + 1) &&
                           (gp.C >= c - 1 && gp.C <= c + 1) &&
-                         !(gp.R == r     && gp.C == c    )
+                         !(gp.R == r && gp.C == c)
                     select gp;
 
-                return neighbors;              
+                return neighbors;
             }
             else
             {
@@ -700,11 +707,11 @@ bool LINQ = false;
 
         private GamePiece Item(int r, int c)
         {
-           
-            var  retval = from gp in _cells
-                      where gp.R == r && gp.C == c
-                      select gp;
-            return retval.First();            
+
+            var retval = from gp in _cells
+                         where gp.R == r && gp.C == c
+                         select gp;
+            return retval.First();
         }
 
         private IEnumerable<GamePiece> GetRow(int r)
@@ -728,16 +735,16 @@ bool LINQ = false;
         private void UnPlay(Point pt)
         {
             //Handle WON n LOST CONDITIONS TOO
-            UnPlay((int)pt.X,(int) pt.Y);         
+            UnPlay((int)pt.X, (int)pt.Y);
         }
 
         private void UnPlay(int r, int c)
         {
             GamePiece gp = Item(r, c);
             UnPlay(gp.R, gp.C, true);
-           
+
         }
-        private void Play(Point pt, bool sendClickSound )
+        private void Play(Point pt, bool sendClickSound)
         {
             Play((int)pt.X, (int)pt.Y, sendClickSound);
 
@@ -751,23 +758,24 @@ bool LINQ = false;
                 {
                     gp.Value = GameConstants.PieceValues.WRONGCHOICE;
                     EndGame(GameConstants.GameStates.LOST);
-                    
+
                 }
                 else
                 {
                     StartGameIfNeeded();
                     gp.Value = gp.ActualValue;
-                    
+
                     if (allowclick)
                         soundAdornment.ClickItemOK();
-                    
+
                     if (gp.Value == GameConstants.PieceValues.NOMINE)
                     {
                         PlayNeighbors(gp);
                         GameState = GameConstants.GameStates.IN_BONUSPLAY;
-                    }else
+                    }
+                    else
                         GameState = GameConstants.GameStates.IN_PLAY;
-                   
+
                 }
             }
         }
@@ -776,18 +784,18 @@ bool LINQ = false;
         {
             GamePiece gp = Item(r, c);
             if (gp.IsPlayed && gp.Value != GameConstants.PieceValues.FLAGGED)
-            {                
-                    gp.Value = GameConstants.PieceValues.BUTTON;                   
-                    if (gp.ActualValue == GameConstants.PieceValues.NOMINE)
-                        UnPlayNeighbors(gp);
-                    GameState = GameConstants.GameStates.IN_PLAY;
-                    if (allowclick == true)
-                    {
-                        this.soundAdornment.Swoosh();
+            {
+                gp.Value = GameConstants.PieceValues.BUTTON;
+                if (gp.ActualValue == GameConstants.PieceValues.NOMINE)
+                    UnPlayNeighbors(gp);
+                GameState = GameConstants.GameStates.IN_PLAY;
+                if (allowclick == true)
+                {
+                    this.soundAdornment.Swoosh();
 
-                    }
+                }
 
-                
+
             }
         }
 
@@ -820,7 +828,7 @@ bool LINQ = false;
             }
         }
 
-       
+
 
         private void Flag(int r, int c)
         {
@@ -842,7 +850,7 @@ bool LINQ = false;
             }
             if (Mines == 0)
                 if (EvaluateWin())
-                    
+
                     EndGame(GameConstants.GameStates.WON);
         }
 
@@ -856,7 +864,7 @@ bool LINQ = false;
                 case (GameConstants.GameStates.WON):
                     soundAdornment.Won();
                     break;
-                
+
             }
             tmr.Enabled = GameBoardEnabled = false;
             GameState = gState;
@@ -878,15 +886,15 @@ bool LINQ = false;
             {
 
                 if (mineesCollection.ElementAt(i).Value != GameConstants.PieceValues.FLAGGED)
-                    {
-                        continueEval = allFlagsSetCorrectly = false;
-                    }
+                {
+                    continueEval = allFlagsSetCorrectly = false;
+                }
             }
 
             return allFlagsSetCorrectly;
         }
 
-        
+
         // Create the OnPropertyChanged method to raise the event 
         protected void OnPropertyChanged(string name)
         {
@@ -936,26 +944,26 @@ bool LINQ = false;
             Rows = rows;
             Columns = columns;
             Mines = mines;
-            Height =  (int)((double)height * (SystemParameters.FullPrimaryScreenHeight / GameConstants.DESIGNHEIGHT)); ;
-            Width =   (int)((double)width  * (SystemParameters.FullPrimaryScreenWidth / GameConstants.DESIGNWIDTH));
+            Height = (int)((double)height * (SystemParameters.FullPrimaryScreenHeight / GameConstants.DESIGNHEIGHT)); ;
+            Width = (int)((double)width * (SystemParameters.FullPrimaryScreenWidth / GameConstants.DESIGNWIDTH));
             OnPropertyChanged("IsBeginner");
             OnPropertyChanged("IsIntermediate");
             OnPropertyChanged("IsAdvanced");
             OnPropertyChanged("IsCustom");
         }
         #endregion
-       
+
         #region PUBLIC
-      
+
         #endregion
         #endregion
 
         #region DISPOSE
         bool disposed = false;
         public void Dispose()
-        {         
+        {
             Dispose(true);
-            GC.SuppressFinalize(this);            
+            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
@@ -968,7 +976,7 @@ bool LINQ = false;
                 tmr.Elapsed -= tmr_Elapsed;
                 tmr.Dispose();
                 RelayCommand.NewCommandItemEvent -= RelayCommand_NewCommandItemEvent;
-               
+
             }
             disposed = true;
         }

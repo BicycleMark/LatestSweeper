@@ -13,7 +13,7 @@ namespace Sweeper.ViewModels
         public GamePiece(int nItem, GameConstants.PieceValues pv)
         {
             linearIndex = nItem;
-           // IsPlayed = false;
+            // IsPlayed = false;
             value = pv;
         }
 
@@ -29,7 +29,7 @@ namespace Sweeper.ViewModels
                 gameBoard = sweeperViewModel;
             //this._GridBorderBrush = sweeperViewModel.GridBorderBrush;
             //this._HiGridBorderBrush = sweeperViewModel.HiGridBorderBrush;
-            
+
             App.ChangeThemeEvent += App_ChangeThemeEvent;
         }
         private int linearIndex;
@@ -43,7 +43,9 @@ namespace Sweeper.ViewModels
 
         public bool IsPlayed
         {
-            get { if ((this.value == this.actualValue) || (this.value == GameConstants.PieceValues.WRONGCHOICE))
+            get
+            {
+                if ((this.value == this.actualValue) || (this.value == GameConstants.PieceValues.WRONGCHOICE))
                     return true;
                 else
                     return false;
@@ -68,10 +70,10 @@ namespace Sweeper.ViewModels
             get { return this.value; }
             set
             {
-                
-                    this.value = value;
-                    OnPropertyChanged("Value");
-                
+
+                this.value = value;
+                OnPropertyChanged("Value");
+
 
             }
         }
@@ -115,10 +117,10 @@ namespace Sweeper.ViewModels
 
         public void ChangeTheme(string themeName)
         {
-            
+
             OnPropertyChanged("Value");
         }
-            
+
         #region DISPOSE
         bool disposed = false;
         public void Dispose()
