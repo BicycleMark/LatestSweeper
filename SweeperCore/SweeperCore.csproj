@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Sweeper</AssemblyName>
+    <RootNamespace>Sweeper</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Sweeper\App.xaml.cs" Link="App.xaml.cs" />
+    <Compile Include="..\Sweeper\ApplicationThemeEventArg.cs" Link="ApplicationThemeEventArg.cs" />
+    <Compile Include="..\Sweeper\Properties\AssemblyInfo.cs" Link="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Sweeper\Properties\Resources.Designer.cs" Link="Properties\Resources.Designer.cs" />
+    <Compile Include="..\Sweeper\Properties\Settings.Designer.cs" Link="Properties\Settings.Designer.cs" />
+    <Compile Include="..\Sweeper\Services\Implementations\NullDialogService.cs" Link="Services\Implementations\NullDialogService.cs" />
+    <Compile Include="..\Sweeper\Services\Implementations\NullSoundAdornment.cs" Link="Services\Implementations\NullSoundAdornment.cs" />
+    <Compile Include="..\Sweeper\Services\Implementations\RealDialogService.cs" Link="Services\Implementations\RealDialogService.cs" />
+    <Compile Include="..\Sweeper\Services\Implementations\SoundAdornmenRes.cs" Link="Services\Implementations\SoundAdornmenRes.cs" />
+    <Compile Include="..\Sweeper\Services\Implementations\SoundAdornment.cs" Link="Services\Implementations\SoundAdornment.cs" />
+    <Compile Include="..\Sweeper\Services\Interfaces\IAdornGameWithSounds.cs" Link="Services\Interfaces\IAdornGameWithSounds.cs" />
+    <Compile Include="..\Sweeper\Services\Interfaces\IChangeTheme.cs" Link="Services\Interfaces\IChangeTheme.cs" />
+    <Compile Include="..\Sweeper\Services\Interfaces\IDialogService.cs" Link="Services\Interfaces\IDialogService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\Sweeper\Properties\Resources.resx" Link="Properties\Resources.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Services\Implementations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Sweeper\Properties\Settings.settings" Link="Properties\Settings.settings" />
+  </ItemGroup>
+
+</Project>
